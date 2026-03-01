@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hailey Nicole Cruz | Mis XV</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#0b3d2e;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+  border:12px solid #d4af37;
+}
+#intro{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#0b3d2e;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+#intro h1{
+  font-family:'Great Vibes',cursive;
+  font-size:65px;
+  color:#d4af37;
+}
+.intro-btn{
+  background:transparent;
+  border:1px solid #d4af37;
+  color:#d4af37;
+  padding:12px 28px;
+  border-radius:30px;
+  margin-top:20px;
+  cursor:pointer;
+  font-family:'Playfair Display',serif;
+  letter-spacing:2px;
+}
+.hero{
+  padding:120px 20px 80px;
+}
+.hero h1{
+  font-family:'Great Vibes',cursive;
+  font-size:75px;
+  color:#d4af37;
+}
+.subtitle{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  letter-spacing:3px;
+}
+.gold{color:#d4af37;}
+.section{
+  padding:80px 20px;
+}
+.invite-text{
+  max-width:750px;
+  margin:auto;
+  font-family:'Playfair Display',serif;
+  line-height:1.8;
+  font-size:18px;
+}
+.countdown{
+  font-size:24px;
+  margin-top:20px;
+  font-family:'Playfair Display',serif;
+  color:#d4af37;
+}
+.rose{
+  position:fixed;
+  width:35px;
+  opacity:0.15;
+  animation:float 40s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+iframe{
+  width:100%;
+  max-width:650px;
+  height:850px;
+  border:none;
+  border-radius:15px;
+}
+button{
+  background:transparent;
+  border:1px solid #d4af37;
+  color:#d4af37;
+  padding:10px 22px;
+  border-radius:25px;
+  margin-top:15px;
+  cursor:pointer;
+}
+footer{
+  padding:40px;
+  font-family:'Playfair Display',serif;
+  opacity:0.7;
+}
+</style>
+</head>
+<body>
+<!-- Floating Roses -->
+<div class="rose" style="left:20%;"></div>
+<div class="rose" style="left:75%;"></div>
+
+<!-- Intro Screen -->
+<div id="intro">
+  <h1>Hailey Nicole Cruz</h1>
+  <p class="subtitle">Mis XV Años</p>
+  <button class="intro-btn" onclick="openInvite()">Open Invitation</button>
+</div>
+
+<div id="main" style="display:none;">
+<div class="hero">
+  <h1>Hailey Nicole Cruz</h1>
+  <div class="subtitle gold">June 27, 2026 • 5:00 PM</div>
+  <p>Duncanville, TX 75236</p>
+  <div id="countdown" class="countdown"></div>
+</div>
+
+<div class="section invite-text">
+  <p>
+  Together with their families,<br><br>
+  <strong>Eleodoro Cruz & Ruby Cruz</strong><br><br>
+  joyfully invite you to celebrate the Quinceañera of their beloved daughter
+  </p>
+
+  <h2 class="gold" style="font-family:'Great Vibes'; font-size:50px;">
+  Hailey Nicole Cruz
+  </h2>
+
+  <p>
+  as she gives thanks for her first fifteen years and looks forward with faith and love to the future.
+  </p>
+
+  <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=Duncanville,TX+75236')">
+  View Location
+  </button>
+</div>
+
+<div class="section">
+  <h2 class="gold">Gallery</h2>
+  <p>Photos coming soon!</p>
+</div>
+
+<div class="section">
+  <h2 class="gold">Dress Code</h2>
+  <p>Formal attire in emerald, gold, black, or refined neutrals.</p>
+</div>
+
+<div class="section">
+  <h2 class="gold">Gifts</h2>
+  <p>Your presence is my greatest gift. Monetary blessings are warmly appreciated.</p>
+</div>
+
+<div class="section">
+  <h2 class="gold">RSVP</h2>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdFzm2w5EXJd81xd7em2yEC4FyseDC-MR6waMLzHhUead9-nA/viewform?embedded=true"></iframe>
+</div>
+
+<footer>
+With love and gratitude,<br>
+Hailey Nicole Cruz 💚
+</footer>
+</div>
+
+<script>
+function openInvite(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("main").style.display="block";
+}
+
+// Countdown
+var countDownDate=new Date("June 27, 2026 17:00:00").getTime();
+setInterval(function(){
+  var now=new Date().getTime();
+  var distance=countDownDate-now;
+  var days=Math.floor(distance/(1000*60*60*24));
+  var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+  var seconds=Math.floor((distance%(1000*60))/1000);
+  document.getElementById("countdown").innerHTML=
+  days+" Days • "+hours+" Hours • "+minutes+" Minutes • "+seconds+" Seconds";
+},1000);
+</script>
+</body>
+</html>
